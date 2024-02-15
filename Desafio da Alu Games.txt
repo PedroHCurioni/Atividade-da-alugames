@@ -1,0 +1,53 @@
+Para esse desafio a primeira coisa a ser lembrada é que por ser varios jogos devemos dar um parametro a função e começar pelas variaveis para o auxilo
+
+
+let gameClicado = document.getElementById(`game-${id}`);
+    let imagen = gameClicado.querySelector('.dashboard__item__img');
+    let botao = gameClicado.querySelector('dashboard__item__button');
+    let nomeDoJogo = gameClicado.querySelector('dashboard__item__name');
+
+
+Devemos fazer assim para que o botão funcione antes de add a função de fazer ele trocar de alugar para devolver porém o nome do jogo so serve para realizar um teste para saber se o batao quando clicado esta puxando o jogo certo
+
+Agora usando as condições if e else vamos atribuir os valores por meio da classlist dessa forma
+
+if (imagem.classList.contains('dashboard__item__img--rented')) {
+        imagem.classList.remove('dashboard__item__img--rented');
+        imagem.classList.add('dashboard__item__img');
+        
+    } else {
+        imagem.classList.add('dashboard__item__img--rented');
+        
+    }
+
+
+Agora vamos mexer no texto do botão usando o botao.textContent para mudar o nome dos botoes para alugar e devolver.
+
+
+CODIGO PRONTO:
+
+function alterarStatus(id) {
+    let gameClicado = document.getElementById(`game-${id}`);
+    let imagem = gameClicado.querySelector('.dashboard__item__img');
+    let botao = gameClicado.querySelector('.dashboard__item__button');
+    
+
+    if (imagem.classList.contains('dashboard__item__img--rented')) {
+        imagem.classList.remove('dashboard__item__img--rented');
+        botao.classList.remove('dashboard__item__button--return');
+        botao.textContent = 'Alugar';
+    } else {
+        imagem.classList.add('dashboard__item__img--rented');
+        botao.classList.add('dashboard__item__button--return');
+        botao.textContent = 'Devolver';
+        
+    }
+
+
+}
+
+
+
+
+
+
